@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D Object</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script>
+        var i = 0;
+        var txt = `• Plateosaurus is a genus of plateosaurid dinosaur that lived during the Late Triassic period in Central and Northern Europe..
+        • It is a basal sauropodomorph dinosaur, often referred to as a "prosauropod"..
+        • The three valid species of Plateosaurus are Plateosaurus trossingensis, Plateosaurus longiceps, and Plateosaurus gracilis.`; /* The text */
+        var speed = 20; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+        if (i < txt.length) {
+            if (txt.charAt(i) =='.') {
+                document.getElementById("summary").innerHTML += '<br>';
+            }
+            else {
+                document.getElementById("summary").innerHTML += txt.charAt(i);
+            }
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+        }
+      </script>
+</head>
+
+<body onload="typeWriter()" class="bg-white">
+    <!-- Main Container -->
+    <header id="navbar">
+        <div class="ml-6 mt-2 w-1/6 h-10">
+            <img class="w-4/6 invert" src="assets/logo.png" alt="logo">
+        </div>
+        <div  class="right-2 mt-4">
+            <ul>
+                <li><a class="hover:text-blue" href="#">About Us</a></li>
+                <li><a class="hover:text-blue" href="#">Contact</a></li>
+                <li><a class="hover:text-blue" href="#">FAQs</a></li>
+                <li>
+                    <button id="menu-item1" class="mr-9 md:mr-0 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current mr-2" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <hr class="border-gray-400 mx-7 dark:border-gray-700 mt-6" />
+    <div id="container" class="px-40 mt-6">
+        <div class="row w-full">
+            <div id="aSide" class="mr-8">
+                <model-viewer src="assets/scene.gltf" alt="Dinosaur" auto-rotate camera-controls ar ios-src="assets/scene.gltf">
+                </model-viewer>
+            </div>
+            <div class="chatgpt h-full rounded-lg text-black py-4 px-5">
+                <h1 class="mb-4 text-xl font-bold text-white">AI Generated Summary</h1>
+                <div id="summary" class="text-white text-lg"></div>
+            </div>
+        </div>
+
+        <div id="description" class="pb-12">
+            <h1 class="mt-5 mb-2 text-4xl font-bold text-black font-serif">Plateosaurus Skeleton</h1>
+                <p class="desc text-black font-serif text-lg">
+                    Plateosaurus (probably meaning "broad lizard", often mistranslated as "flat lizard") is a genus of plateosaurid dinosaur that lived during the Late Triassic period, around 214 to 204 million years ago, in what is now Central and Northern Europe. Plateosaurus is a basal (early) sauropodomorph dinosaur, a so-called "prosauropod". The type species is Plateosaurus trossingensis; before 2019, that honor was given to Plateosaurus engelhardti, but it was ruled as undiagnostic (i.e. indistinguishable from other dinosaurs) by the ICZN. Currently, there are three valid species; in addition to P. trossingensis, P. longiceps and P. gracilis are also known. However, others have been assigned in the past, and there is no broad consensus on the species taxonomy of plateosaurid dinosaurs. Similarly, there are a plethora of synonyms (invalid duplicate names) at the genus level.
+                </p><br>
+                <p class="desc text-black font-serif text-lg">
+                    Discovered in 1834 by Johann Friedrich Engelhardt and described three years later by Hermann von Meyer, Plateosaurus was the fifth named dinosaur genus that is still considered valid. Although it had been described before Richard Owen formally named Dinosauria in 1842, it was not one of the three genera used by Owen to define the group, because at the time, it was poorly known and difficult to identify as a dinosaur. It is now among the dinosaurs best known to science: over 100 skeletons have been found, some of them nearly complete. The abundance of its fossils in Swabia, Germany, has led to the nickname Schwäbischer Lindwurm (Swabian lindworm).
+                </p><br>
+                <p class="desc text-black font-serif text-lg">
+                    Plateosaurus was a bipedal herbivore with a small skull on a long, flexible neck, sharp but plump plant-crushing teeth, powerful hind limbs, short but muscular arms and grasping hands with large claws on three fingers, possibly used for defence and feeding. Unusually for a dinosaur, Plateosaurus showed strong developmental plasticity: instead of having a fairly uniform adult size, fully grown individuals were between 4.8 and 10 metres (16 and 33 ft) long and weighed between 600 and 4,000 kilograms (1,300 and 8,800 lb). Commonly, the animals lived for at least 12 to 20 years, but the maximum life span is not known.
+                </p><br>
+                <p class="desc text-black font-serif text-lg">
+                    Despite the great quantity and excellent quality of the fossil material, Plateosaurus was for a long time one of the most misunderstood dinosaurs. Some researchers proposed theories that were later shown to conflict with geological and palaeontological evidence, but have become the paradigm of public opinion. Since 1980 the taxonomy (relationships), taphonomy (how the animals became embedded and fossilised), biomechanics (how their skeletons worked), and palaeobiology (life circumstances) of Plateosaurus have been re-studied in detail, altering the interpretation of the animal's biology, posture and behaviour.
+                </p>
+              
+              <div class="mx-auto my-5 mt-10 text-center px-4 text-2xl font-semibold text-black">Recommendations</div>
+              <div class="mx-auto max-w-screen-sm lg:max-w-screen-lg flex flex-col lg:flex-row lg:flex-wrap">
+                <div class="inline-flex">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mr-5">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tyrannosaurus</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Tyrannosaurus is a genus of large theropod dinosaur. One of the best represented theropods. It lived throughout what is now western North America, on what was then an island continent known as Laramidia.</p>
+                            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mr-5">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Spinosaurus</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Spinosaurus is a genus of spinosaurid dinosaur that lived in what now is North Africa during the Cenomanian to upper Turonian stages of the Late Cretaceous period, about 99 to 93.5 million years ago.</p>
+                            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Triceratops</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Triceratops is a genus of chasmosaurine ceratopsian dinosaur that lived during the late Maastrichtian age of the Late Cretaceous period, about 68 to 66 million years ago in what is now western North America.</p>
+                            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
