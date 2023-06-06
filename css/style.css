@@ -13,7 +13,6 @@
     margin: 0;
     font-family: sans-serif;
     box-sizing: border-box;
-    color: grey;
 }
 
 body {
@@ -35,61 +34,48 @@ body {
 
 #navbar {
     display: flex;
-    height: 60px;
-    /* top: 20px; */
-    left: 0;
+    height: 80px;
     justify-content: space-between;
+    padding: 8px 5%;
+    align-items: center;
 }
 
-
-/* This styles the logo in the navbar */
-
-#navbar #logo {
-    height: 60px;
-    width: 60px;
-    left: 3%;
-    top: -5px;
+#navbar >* {
+    height: 100%;
 }
 
-
-/* This styles the logo image to be used in the navbar */
-
-#navbar #logo img {
-    height: 60px;
-    width: 60px;
+#navbar >* >* {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 /* This styles the unlisted links in the navbar */
 
 #navbar ul {
-    list-style: none;
     display: flex;
     flex-direction: row;
-    right: 3%;
-    top: 0;
 }
 
 
 /* This changes the appearance of the listed links in the navbar */
 
 #navbar ul li {
-    height: 60px;
     width: 80px;
     margin: 0 10px;
-    display: grid;
-    place-items: center;
-    color: black;
 }
 
+#navbar ul li button {
+    height: 50%;
+    width: 80%;
+    justify-content: center;
+}
 
-/* This sets the hover action of the navbar links */
-
-/* #navbar ul:hover {
-    background: none;
-    border: none;
-    color: blue;
-} */
+.separator {
+    border: 1px solid black;
+    margin: 0 5%;
+}
 
 .row {
     display: inline-flex;
@@ -112,7 +98,6 @@ body {
 
 #content h2 {
     font-size: 140px;
-    color: black;
 }
 
 
@@ -120,7 +105,6 @@ body {
 
 #content p {
     font-size: 20px;
-    color: black
 }
 
 
